@@ -38,7 +38,7 @@ const ciclo = ()=>{
 
     }
     pincel.posAnterior = {x:pincel.pos.x, y:pincel.pos.y}
-    setTimeout(ciclo, 10);
+    setTimeout(ciclo, 1);
 } 
 ciclo();
 // desenharLinha({pos:{x:350,y: 250, }, posAnterior:{x:10, y:10}});
