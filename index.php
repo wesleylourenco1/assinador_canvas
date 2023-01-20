@@ -1,65 +1,31 @@
 <html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="src/estilo.css" />
+<meta charset="utf-8" />
     <title>Desenhando na canvas</title>
 </head>
 
 <body>
-    <canvas id="quadro" style="background:#fff; border:dotted"></canvas>
-    <button id="limparAssinatura">Limpar</button>
+<p>
+<h1>Leia atentamente o contrato abaixo:</h1>
+
+
+</p>
+    <iframe src="exemplo.pdf" id="iframepdf" height="350"></iframe>
+<p>
+    Caso concorde com o contrato assine no quadro abaixo e digite o código recebido via SMS no número: 41 99999-9999:    <input type="text" maxlength="5">
+</p>
+Enviar contrato assinado por e-mail: Digite seu e-mail: <input type="email" name="emial" id="email">
+
+    <canvas id="quadro" style=></canvas>
+<button id="limparAssinatura" style="background-color: red; border:none; align-items: center; align-content: center;">Limpar</button>
+<button id="salvar" style="background-color: aqua; border:none;align-items: center; align-content: center;">Lí e concordo</button>
+
+</p>
+
 </body>
-<script>
-    window.onload = function() {
-        let limparAssinatura = document.getElementById("limparAssinatura");
-        var largura =(window.screen.width-50);
-        var altura = 300;
-
-
-        var quadro = document.getElementById("quadro");
-        quadro.setAttribute("width", largura);
-        quadro.setAttribute("height", altura);
-
-        var ctx = quadro.getContext("2d");
-        limparAssinatura.addEventListener("click", e=>{
-            ctx.clearRect(0, 0, quadro.width, quadro.height);
-            ctx.beginPath();
-        })
-        var desenhando = false;
-
-        quadro.onmousedown = function(evt) {
-            
-            ctx.moveTo(evt.clientX, evt.clientY);
-            desenhando = true;
-        }
-        quadro.onmouseup = function() {
-            desenhando = false;
-        }
-        quadro.addEventListener("touchstart", evt=>{
-            
-            ctx.moveTo(evt.targetTouches[0].clientX, evt.targetTouches[0].clientY);
-            desenhando = true;
-        });
-        quadro.addEventListener("touchmove", evt=>{
-            
-            if (desenhando) {
-                ctx.lineTo(evt.targetTouches[0].clientX, evt.targetTouches[0].clientY);
-                ctx.stroke();
-            }
-            //console.log(e.clientX);
-
-        });
-        quadro.addEventListener("touchend",evt=>{
-            desenhando = false;
-        });
-        
-        quadro.onmousemove = function(evt) {
-            if (desenhando) {
-                ctx.lineTo(evt.clientX, evt.clientY);
-                ctx.stroke();
-            }
-        }
-    }
+<script src="src/assinatura.js">
 </script>
 
 </html>

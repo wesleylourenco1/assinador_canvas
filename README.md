@@ -1,2 +1,4 @@
-# assinador_canvas
-assinador contratos com canvas
+# assinador_de_contrato_online
+
+Sistema para assitura de contratos online.
+
