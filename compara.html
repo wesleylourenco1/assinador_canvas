@@ -1,0 +1,37 @@
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" style="font-family:Arial, Helvetica, sans-serif;">
+	<head>
+		<link rel="stylesheet" type="text/css" href="src/estilo.css" />
+		<meta charset="utf-8" />
+		<title>Desenhando na canvas</title>
+	</head>
+	<body>
+		<p>
+			<h1 class="titulo">Leia atentamente o contrato abaixo:</h1>
+		</p>
+		<iframe src="exemplo.pdf" id="iframepdf" height="350"></iframe>
+		<div class="titulo margemdiv">
+			<div style="width:49%">
+				Caso concorde com o contrato assine no quadro abaixo e digite o código recebido via SMS no número: 41 99999-9999:
+				<input type="text" maxlength="5">
+			</div>
+			<div style="width:2%">&nbsp;</div>
+			<div style="width:49%;text-align:right;">
+				Enviar contrato assinado por e-mail: Digite seu e-mail:
+				<input type="email" name="emial" id="email" style="margin-right:2px;">
+			</div>
+		</div>
+		<canvas id="quadro" style=></canvas>
+		<div class="titulo margemdiv">
+			<button id="limparAssinatura" class="btn btn-limpar">Limpar</button>&nbsp;
+			<button id="salvar" class="btn btn-salvar">Lí e concordo</button>
+		</div>
+	</body>
+	<footer class="bg-light text-center text-lg-start" style="margin-top:20px;">
+		<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+			© 2023 Copyright: 
+			<a class="text-dark" href="#">Assina.com</a>
+		</div>
+	</footer>
+	<script src="src/assinatura.js">
+	</script>
+</html>
